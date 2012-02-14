@@ -1,0 +1,32 @@
+<% title "Thermostat" %>
+
+<p>
+  <strong>Address:</strong>
+  <%= @thermostat.address %>
+</p>
+<p>
+  <strong>Serial Number:</strong>
+  <%= @thermostat.serial_number %>
+</p>
+<p>
+  <strong>Set Point:</strong>
+  <%= @thermostat.set_point %>
+</p>
+
+<!-- Map of Thermostat -->
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@thermostat.latitude}%2C#{@thermostat.longitude}" %>
+
+<!-- List of Nearby Thermostats -->
+
+<h3>Nearby Thermostats</h3>
+<ul>
+<% for thermostat in @thermostat.nearbys(10) %>
+  <li><%= link_to thermostat.address, thermostat %> (<%= thermostat.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+<p>
+  <%= link_to "Edit", edit_thermostat_path(@thermostat) %> |
+  <%= link_to "View All", thermostats_path %>
+</p>

@@ -1,0 +1,9 @@
+    thermostats GET    /thermostats(.:format)                 thermostats#index
+                POST   /thermostats(.:format)                 thermostats#create
+ new_thermostat GET    /thermostats/new(.:format)             thermostats#new
+edit_thermostat GET    /thermostats/:id/edit(.:format)        thermostats#edit
+     thermostat GET    /thermostats/:id(.:format)             thermostats#show
+                PUT    /thermostats/:id(.:format)             thermostats#update
+                DELETE /thermostats/:id(.:format)             thermostats#destroy
+           root        /                                      thermostats#index
+                       /:controller(/:action(/:id))(.:format) :controller#:action

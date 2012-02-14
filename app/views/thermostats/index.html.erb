@@ -1,0 +1,39 @@
+<% title "Demand Response Screen" %>
+
+<p>Enter an address to search for thermostats within a 10 mile radius.</p>
+
+<!-- Search Box -->
+
+<%= form_tag thermostats_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Find Thermostats", :name => nil %>
+  </p>
+<% end %>
+
+<!-- List of Thermostats -->
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Serial Number</th>
+    <th>Set Point</th>
+  </tr>
+  <% for thermostat in @thermostats %>
+    <tr>
+      <td><%= thermostat.address %></td>
+      <td class="center"><%= thermostat.serial_number %></td>
+      <td class="center"><%= thermostat.set_point %></td>
+      <td><%= link_to "Show Details", thermostat %></td>
+      <td><%= link_to "Edit", edit_thermostat_path(thermostat) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Create New Thermostat", new_thermostat_path %> |
+  <%= link_to "View All", thermostats_path %></p>
+
+
+
+
+

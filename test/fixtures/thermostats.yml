@@ -1,0 +1,13 @@
+one:
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  serial_number: 1
+  set_point: 1
+
+two:
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  serial_number: 1
+  set_point: 1

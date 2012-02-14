@@ -1,0 +1,16 @@
+<%= form_for @thermostat do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :serial_number %><br />
+    <%= f.number_field :serial_number %>
+  </p>
+  <p>
+    <%= f.label :set_point %><br />
+    <%= f.number_field :set_point %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

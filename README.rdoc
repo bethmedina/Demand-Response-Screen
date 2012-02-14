@@ -1,5 +1,7 @@
 == Demand Response Screen
 
+
+
  This app is able to accomplish most of the operations requested in the problem, although not in the way they probably "should" be accomplished.  I have done the following:
 
 * installed and configured various ruby gems
